@@ -1,0 +1,54 @@
+﻿.cke_button__umbracosave_icon {
+    background: url(/App_Plugins/uCKEditor/CKEditor/plugins/icons.png) no-repeat 0 -1704px !important;
+}
+
+.cke_hidpi .cke_button__umbracosave_icon {
+    background: url(/App_Plugins/uCKEditor/CKEditor/plugins/icons_hidpi.png) no-repeat 0 -1704px !important;
+    background-size: 16px !important;
+}
+
+.cke_button__umbracomedia_icon {
+    background: url(/App_Plugins/uCKEditor/CKEditor/plugins/umbracomedia/icons/umbracomedia.png) no-repeat scroll 0 0 transparent !important;
+}
+
+.cke_hidpi .cke_button__umbracomedia_icon {
+    background: url(/App_Plugins/uCKEditor/CKEditor/plugins/umbracomedia/icons/hidpi/umbracomedia.png) no-repeat scroll 0 0 transparent !important;
+    background-size: 16px !important;
+}
+
+.cke_button__umbracoembed_icon {
+    background: url(/App_Plugins/uCKEditor/CKEditor/plugins/umbracoembed/icons/umbracoembed.png) no-repeat scroll 0 0 transparent !important;
+}
+
+.cke_hidpi .cke_button__umbracoembed_icon {
+    background: url(/App_Plugins/uCKEditor/CKEditor/plugins/umbracoembed/icons/hidpi/umbracoembed.png) no-repeat scroll 0 0 transparent !important;
+    background-size: 16px !important;
+}
+
+.cke_button__umbracomediatagger_icon {
+    background: url(/App_Plugins/uCKEditor/CKEditor/plugins/umbracomediatagger/icons/umbracomediatagger.png) no-repeat scroll 0 0 transparent !important;
+}
+
+.cke_hidpi .cke_button__umbracomediatagger_icon {
+    background: url(/App_Plugins/uCKEditor/CKEditor/plugins/umbracomediatagger/icons/hidpi/umbracomediatagger.png) no-repeat scroll 0 0 transparent !important;
+    background-size: 16px !important;
+}
+
+
+iframe#umbracoBackofficeIframe {
+    width: 100% !important;
+    height: 99% !important; /* to avoid the vertical scroll bar to appear*/
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.centered {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.uckeditor-loading {
+    color: grey;
+}

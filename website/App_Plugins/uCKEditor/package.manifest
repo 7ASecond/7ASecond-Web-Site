@@ -1,0 +1,167 @@
+﻿{
+	propertyEditors:[
+		{
+			name: 'uCKEditor',
+			alias: 'uCKEditor',
+			editor:{
+				view: '~/App_Plugins/uCKEditor/editor.html',
+				hideLabel: false,
+				valueType: "TEXT",
+				validation: {},
+				isReadOnly: false 
+			},
+			prevalues: {
+				fields: [
+					{
+					   label: "Hide label",
+					   description: "Hide the label on the left hand side",
+					   key: "hideLabel",
+					   view: "boolean"
+					},
+					{
+					   label: "CustomConfigurationFile",
+					   description: "Custom configuration file path (e.g. /config/ckeditor_conf1.js) IMPORTANT: When this setting is set, all settings below are ignored!",
+					   key: "customConfigurationFile",
+					   view: "textstring"
+					},
+					{
+					   label: "Width",
+					   description: "",
+					   key: "width",
+					   view: "number"
+					},
+					{
+					   label: "Height",
+					   description: "",
+					   key: "height",
+					   view: "number"
+					},
+					{
+					   label: "Language",
+					   description: "",
+					   key: "language",
+					   view: "textstring"
+					},
+					{
+					   label: "Font_names",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "font_names",
+					   view: "textarea"
+					},
+					{
+					   label: "Font_style",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "font_style",
+					   view: "textarea"
+					},
+					{
+					   label: "Format_tags",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "format_tags",
+					   view: "textarea"
+					},
+					{
+					   label: "AllowedContent",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "allowedContent",
+					   view: "textarea"
+					},
+					{
+					   label: "ExtraAllowedContent",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "extraAllowedContent",
+					   view: "textarea"
+					},
+					{
+					   label: "Toolbar",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "toolbar",
+					   view: "textarea"
+					},
+					{
+					   label: "ToolbarGroups",
+					   description: "This setting is ignored when the previous setting <Toolbar> is set. Leave empty to use CKEditor default values.",
+					   key: "toolbarGroups",
+					   view: "textarea"
+					},
+					{
+					   label: "RemoveButtons",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "removeButtons",
+					   view: "textarea"
+					},
+					{
+					   label: "ExtraPlugins",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "extraPlugins",
+					   view: "textarea"
+					},
+					{
+					   label: "RemovePlugins",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "removePlugins",
+					   view: "textarea"
+					},
+					{
+					   label: "StylesSet",
+					   description: "Leave empty to use CKEditor default values.",
+					   key: "stylesSet",
+					   view: "textarea"
+					}
+				]
+			},
+			defaultConfig: {
+				hideLabel: 1,
+				customConfigurationFile: "",
+				width: "",
+				height: 500,
+				language: "en",
+				font_names: "",
+				font_style: "",
+				format_tags: "",
+				allowedContent: "",
+				extraAllowedContent: "",
+				toolbar: "",
+				toolbarGroups: "",
+				removeButtons: "",
+				extraPlugins: "",
+				removePlugins: "",
+				stylesSet: ""
+			}
+		},
+        {
+			alias: 'uCKEditor.UniqueId',
+			name: 'Unique ID generator',
+			editor:{
+				valueType: "JSON",
+				view: '~/App_Plugins/uCKEditor/UniqueId/uniqueid.html',
+				hideLabel: false
+			},
+			prevalues : {
+				fields: [
+					{
+					    label: "ID Type",
+					    description: "Available types: Guid, GuidNoDashes, HashcodeFromGuid or Datetime",
+					    key: "uniqueIdType",
+						view: "textstring"
+					}
+				]
+			},
+			defaultConfig: {
+				type: "Guid"
+			}
+		}
+	],
+
+    javascript: [
+		'~/App_Plugins/uCKEditor/uCKEditor.resource.js',
+		'~/App_Plugins/uCKEditor/uCKEditor.controller.js',
+		'~/App_Plugins/uCKEditor/Dashboard/uCKEditor.dashboard.controller.js', 
+		'~/App_Plugins/uCKEditor/UniqueId/uniqueidcontroller.js'
+    ],
+
+    css: [
+		'~/App_Plugins/uCKEditor/uCKEditor.editor.css'
+    ]
+
+}

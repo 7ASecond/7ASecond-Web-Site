@@ -1,0 +1,43 @@
+﻿@model dynamic
+@using Newtonsoft.Json;
+
+@if( Model.value != null )
+{
+    string json = Model.value;
+    var links = JsonConvert.DeserializeObject<IEnumerable<LinkPickerModel>>(json);
+    if (links.Any())
+    {
+        <ul>
+            <li></li>
+        </ul>
+    }
+}
+
+@helper RenderLinks(IEnumerable<LinkPickerModel> links) {
+    <ul>
+        @foreach (var link in links)
+        {
+            <li><a href="@link.Target"></a></li>
+        }
+    </ul>
+}
+
+@functions{
+    public class LinkPickerModel
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("url")]
+        public string Url { get; set; }
+
+        [JsonProperty("target")]
+        public string Target { get; set; }
+
+        [JsonProperty("isMedia")]
+        public bool IsMedia { get; set; }
+    }
+}

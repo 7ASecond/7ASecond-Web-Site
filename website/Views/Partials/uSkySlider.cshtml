@@ -1,0 +1,84 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+
+    dynamic slider = @Model.Content.GetPropertyValue("slider");
+
+    decimal width = !string.IsNullOrEmpty(slider.width.Value.ToString()) ? decimal.Parse(slider.width.Value.ToString()) : 0;
+    decimal height = !string.IsNullOrEmpty(slider.height.Value.ToString()) ? decimal.Parse(slider.height.Value.ToString()) : 0;
+    decimal editorWidth = !string.IsNullOrEmpty(slider.editorWidth.Value.ToString()) ? decimal.Parse(slider.editorWidth.Value.ToString()) : width;
+    decimal editorHeight = !string.IsNullOrEmpty(slider.editorHeight.Value.ToString()) ? decimal.Parse(slider.editorHeight.Value.ToString()) : height;
+
+    var withFactor = width / editorWidth;
+    var heightFactor = height / editorHeight;
+
+}
+
+<div class="tp-banner-container">
+    <div class="tp-banner">
+        <ul>
+
+            @foreach (var index in slider.slides)
+            {
+                
+                <li @( !string.IsNullOrEmpty(index.dataTransition.ToString()) ? "data-transition=" + index.dataTransition : "")
+                    @( !string.IsNullOrEmpty(index.dataSlotamount.ToString()) ? "data-slotamount=" + index.dataSlotamount : "")
+                    @( !string.IsNullOrEmpty(index.dataDelay.ToString()) ? "data-delay=" + index.dataDelay : "")
+                    @( !string.IsNullOrEmpty(index.dataMasterspeed.ToString()) ? "data-masterspeed=" + index.dataMasterspeed : "")>
+
+                    <img src="@(!string.IsNullOrEmpty(index.mediaSrc.ToString()) ? index.mediaSrc : "/App_Plugins/Lecoati.uSky.Slider/assets/transparent.png")"
+                         style="background-color: @index.backgroundColor"
+                         data-bgfit="cover"
+                         data-bgposition="left top"
+                         data-bgrepeat="no-repeat">
+
+                    @foreach (var layer in index.layers)
+                    {
+
+                        var datax = layer.dataX != null && !string.IsNullOrEmpty(layer.dataX.ToString()) ? (decimal.Parse(layer.dataX.ToString()) * withFactor).ToString() : "0";
+                        var datay = layer.dataY != null && !string.IsNullOrEmpty(layer.dataY.ToString()) ? (decimal.Parse(layer.dataY.ToString()) * withFactor).ToString() : "0";
+                        var padding = layer.padding != null && !string.IsNullOrEmpty(layer.padding.ToString()) ? (decimal.Parse(layer.padding.ToString()) * withFactor).ToString() + "px" : "0px";
+                        var fontSize = layer.fontSize != null && !string.IsNullOrEmpty(layer.fontSize.ToString()) ? (decimal.Parse(layer.fontSize.ToString()) * withFactor).ToString() + "px" : "0px";
+                        var lineHeight = layer.fontSize != null && !string.IsNullOrEmpty(layer.fontSize.ToString()) ? (decimal.Parse(layer.fontSize.ToString()) * withFactor).ToString() + "px" : "0px";
+                        var layerwidth = layer.width != null && !string.IsNullOrEmpty(layer.width.ToString()) ? (decimal.Parse(layer.width.ToString()) * withFactor).ToString() + "px" : "0px";
+
+                        <div class="tp-caption @layer.animationClass"
+                             data-x="@datax"
+                             data-y="@datay"
+                             data-speed="@layer.dataSpeed"
+                             data-start="@layer.dataStart"
+                             data-easing="@layer.dataEasing"
+                             style="z-index: 4; background-color: @layer.backgroundColor; color: @layer.color; @layer.customCss; padding: @padding; font-size: @fontSize; line-height: @lineHeight">
+
+                            @if (layer.type == "text")
+                            {
+                                @Html.Raw(layer.content)
+                            }
+                            @if (layer.type == "embed")
+                            {
+                                @Html.Raw(layer.content)
+                            }
+                            @if (layer.type == "image")
+                            {
+                                <img src="@Html.Raw(layer.content)" width="@layerwidth">
+                            }
+                            
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('.tp-banner').revolution(
+         {
+             delay: 9000,
+             @( width > 0 ? "startwidth: " + width + "," : "")
+             @( height > 0 ? "startheight: " + height + "," : "")
+             hideThumbs: 1,
+         });
+    });
+</script>

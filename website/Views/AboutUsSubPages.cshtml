@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+<div class="row">
+    <div class="col-lg-9 col-md-9">
+        <h1>@CurrentPage.Title</h1><br />
+        <div>@CurrentPage.BodyText</div>
+    </div>
+    <div class="col-lg-3 col-md-3">
+        @{    var selection = CurrentPage.Site().FirstChild("Aboutus").Children.Where("Visible");
+        }
+        <ul>
+            <li>
+                <a href=@umbraco.library.NiceUrl(1052)>About Us</a>
+            </li>
+            @foreach (var item in selection)
+            {
+                <li>
+                    <a href="@item.Url">@item.Name</a>
+                </li>
+            }
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+<div><h2>
+@Umbraco.Field("title")
+</h2>
+</div><br/>	
+<div>	
+@Umbraco.Field("bodytext")
+</div>
+	
+<hr />
+
+	
+@{
+	var selection = CurrentPage.Site().FirstChild("Aboutus").FirstChild("FinancialAccounts").Children.Where("Visible");
+}
+<ul>
+	@foreach(var item in selection){
+		<li>
+			<a href="@item.Url">@item.Name</a>
+		</li>
+	}
+</ul>
+<br/>	
+<br/>
+<br/>	
+	
+	
