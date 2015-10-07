@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language alias="ja" intName="Japanese" localName="日本語" lcid="17" culture="ja-JP">
   <creator>
     <name>The Umbraco community</name>
@@ -166,7 +166,7 @@
     <key alias="clickToUpload">クリックしてアップロードする</key>
     <key alias="dropFilesHere">ファイルをここへドロップ..</key>
   </area>
-    <area alias="member">
+  <area alias="member">
     <key alias="createNewMember">メンバーの新規作成</key>
     <key alias="allMembers">全てのメンバー</key>
   </area>
@@ -678,19 +678,16 @@ Runwayをインストールして作られた新しいウェブサイトがど�
     <key alias="paSimpleHelp">単一のログインとパスワードで単純に保護したい場合に適します</key>
   </area>
   <area alias="publish">
-    <key alias="contentPublishedFailedAwaitingRelease">
-    <![CDATA[
+    <key alias="contentPublishedFailedAwaitingRelease"><![CDATA[
       %0% ページは公開がスケジュールされているため、公開されませんでした。
     ]]></key>
     <key alias="contentPublishedFailedInvalid"><![CDATA[
       %1% のプロパティがバリデーション定義に違反したため、%0% は公開できませんでした。
     ]]></key>
-    <key alias="contentPublishedFailedByEvent">
-    <![CDATA[
+    <key alias="contentPublishedFailedByEvent"><![CDATA[
       サードパーティのエクステンションがキャンセルされたので、%0% は公開できませんでした。
     ]]></key>
-    <key alias="contentPublishedFailedByParent">
-    <![CDATA[
+    <key alias="contentPublishedFailedByParent"><![CDATA[
       親ページが公開されていないので、%0% は公開できませんでした。
     ]]></key>
     <key alias="includeUnpublished">非公開の子ページも含めます</key>
@@ -754,6 +751,7 @@ Runwayをインストールして作られた新しいウェブサイトがど�
     <key alias="help" version="7.0">ヘルプ</key>
     <key alias="forms">フォーム</key>
     <key alias="analytics">アナリティクス</key>
+    <key alias="uContactor">Contact</key>
   </area>
   <area alias="help">
     <key alias="goTo">該当のヘルプへ</key>
@@ -864,43 +862,32 @@ Runwayをインストールして作られた新しいウェブサイトがど�
     <key alias="quickGuide">umbraco テンプレートタグのクイックガイド</key>
     <key alias="template">テンプレート</key>
   </area>
-
   <area alias="grid">
     <key alias="insertControl">挿入するアイテムを選択する</key>
     <key alias="addRows">ここからレイアウトを選択します</key>
     <key alias="addElement"><![CDATA[<i class="icon icon-add blue"></i> 最初の要素を追加します]]></key>
-
     <key alias="clickToEmbed">クリックして埋め込む</key>
     <key alias="clickToInsertImage">クリックして画像を挿入する</key>
     <key alias="placeholderImageCaption">キャプション...</key>
     <key alias="placeholderWriteHere">ここに記入する...</key>
-
     <key alias="gridLayouts">レイアウト</key>
     <key alias="gridLayoutsDetail">レイアウトは通常1つまたは2つの異なるレイアウトを必要とする、グリッドエディタの全体的な作業エリアです</key>
     <key alias="addGridLayout">レイアウトを追加する</key>
     <key alias="addGridLayoutDetail">追加のセクションの横幅を設定し、レイアウトを調整する</key>
-
     <key alias="rowConfigurations">行の構成</key>
     <key alias="rowConfigurationsDetail">定義された構成の行が水平に配置されます</key>
     <key alias="addRowConfiguration">行の構成を追加</key>
     <key alias="addRowConfigurationDetail">追加のセルのセル幅を設定することで調整します</key>
-
     <key alias="columns">列</key>
     <key alias="columnsDetails">グリッドレイアウトの列を合計した数</key>
-
     <key alias="settings">設定</key>
     <key alias="settingsDetails">編集者が設定できる項目</key>
-
-
     <key alias="styles">スタイル</key>
     <key alias="stylesDetails">編集者が設定できるスタイル</key>
-
     <key alias="settingDialogDetails">入力されたJSONが正しい場合のみ設定が保存されます</key>
-
     <key alias="allowAllEditors">すべてのエディタを許可する</key>
     <key alias="allowAllRowConfigurations">すべての行の構成を許可する</key>
   </area>
-
   <area alias="templateEditor">
     <key alias="alternativeField">代替フィールド</key>
     <key alias="alternativeText">代替テキスト</key>

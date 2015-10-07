@@ -1,0 +1,32 @@
+{
+  "siteName": {
+    "value": "7ASMvc"
+  },
+  "hostingPlanName": {
+    "value": "sp7mvc"
+  },
+  "siteLocation": {
+    "value": "North Europe"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "serverName": {
+    "value": "ds7asmvc"
+  },
+  "serverLocation": {
+    "value": "North Europe"
+  },
+  "administratorLogin": {
+    "value": "DaveGordon"
+  },
+  "administratorLoginPassword": {
+    "value": "P@r1n@zK0k@b1"
+  },
+  "databaseName": {
+    "value": "7ASMvc_db"
+  }
+}

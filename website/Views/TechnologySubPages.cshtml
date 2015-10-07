@@ -2,3 +2,74 @@
 @{
     Layout = "Master.cshtml";
 }
+<!-- about -->
+<div class="about">
+    <div class="container">
+        <h2>Our Technology</h2>
+        <div class="abou-top">
+            <div class="col-md-4 abou-left">
+                <img src="@Umbraco.Media(CurrentPage.mainImage).Url" class="img-responsive" alt="" />
+            </div>
+            <div class="col-md-8 abou-right">
+                <h4>@Umbraco.Field("longHeaderDescription")</h4>
+                <p>@Umbraco.Field("topContent")</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        @if (!string.IsNullOrEmpty(Umbraco.Field("blockOneHeading").ToHtmlString()))
+        {
+            <div class="abt-btm">
+                <h3>Our Advantages</h3>
+                <div class="col-md-4">
+                    <h4>@Umbraco.Field("blockOneHeading")</h4>
+                    <p> @Umbraco.Field("blockOneContent")</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>@Umbraco.Field("blockTwoHeading")</h4>
+                    <p> @Umbraco.Field("blockTwoContent")</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>@Umbraco.Field("blockThreeHeading")</h4>
+                    <p> @Umbraco.Field("blockThreeContent")</p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(Umbraco.Field("bottomBlockOneContent").ToHtmlString()))
+        {
+            <div class="abt-btm">
+                <h3>Budgets</h3>
+                <div class="col-md-4">
+                    <p> @Umbraco.Field("bottomBlockOneContent")</p>
+                    <h6>@Umbraco.Field("bottomBlockOneByline")</h6>
+                    <a href="#">@Umbraco.Field("bottomBlockOneByline2")</a>
+                </div>
+                <div class="col-md-4">
+                    <p> @Umbraco.Field("bottomBlockTwoContent")</p>
+                    <h6>@Umbraco.Field("bottomBlockTwoByline")</h6>
+                    <a href="#">@Umbraco.Field("bottomBlockTwoByline2")</a>
+                </div>
+                <div class="col-md-4">
+                    <p> @Umbraco.Field("bottomBlockThreeContent")</p>
+                    <h6>@Umbraco.Field("bottomBlockThreeByline")</h6>
+                    <a href="#">@Umbraco.Field("bottomBlockThreeByline2")</a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        }
+        @{
+            if (CurrentPage.HasValue("relatedPages") && CurrentPage.relatedLinks.ToString().Length > 2)
+            {
+                <ul>
+                    @foreach (var item in CurrentPage.relatedLinks)
+                    {
+                        var linkUrl = (bool)item.isInternal ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.link;
+                        var linkTarget = (bool)item.newWindow ? "_blank" : null;
+                        <li><a href="@linkUrl" target="@linkTarget">@item.caption</a></li>
+                    }
+                </ul>
+            }
+        }
+    </div>
+</div>
+<!-- about -->

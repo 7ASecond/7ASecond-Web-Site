@@ -17,6 +17,7 @@ body a{
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
+    color:#0AA5E2;
 }
 .header{
 	background:#fff;
@@ -2515,3 +2516,64 @@ background: #76B2C3 url('../images/search.png') no-repeat -4px -1px;
 background: #668333 url('../images/search.png') no-repeat -4px -1px;
 }
 }
+
+/*-- team --*/
+.team{
+	background:#f4f4f4;
+}
+.team-grid img{
+	margin:0 auto;
+}
+.team-grid{
+	position:relative;
+}
+.team-grid:hover div.team-grid-hov{
+	display:block;
+}
+.team-grid-hov{
+	position:absolute;
+	top: 37%;
+    left: 38%;
+	display:none;
+}
+.team-grid-hov ul li{
+	display:inline-block;
+}
+.team-grid-hov ul li a.twitter{
+	background:url(../images/img-sp.png) no-repeat -4px -8px;
+	display:block;
+	height:32px;
+	width:32px;
+}
+.team-grid-hov ul li a.g{
+	background:url(../images/img-sp.png) no-repeat -43px -8px;
+	display:block;
+	height:32px;
+	width:32px;
+}
+.team-grid-hov ul li a.v{
+	background:url(../images/img-sp.png) no-repeat -83px -8px;
+	display:block;
+	height:32px;
+	width:32px;
+}
+.team-grid p{
+	color:#999;
+	font-size:14px;
+	line-height:1.8em;
+	margin:0;
+	text-align:center;
+}
+.team-grid h4{
+	font-size:1.5em;
+	color:#E1A20C;
+	font-family: 'Oswald', sans-serif;
+    margin:1em 0;
+	text-transform:capitalize;
+	text-align:center;
+}
+.team-grid h4 span{
+	color: #6DBEE8;
+    font-size: 17px;
+}
+/*-- //team --*/

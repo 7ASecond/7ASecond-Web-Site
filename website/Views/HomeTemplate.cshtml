@@ -3,104 +3,97 @@
     Layout = "Master.cshtml";
 }
 
-
-<div class="content">
-    <div class="container">
-        <div class="row grids">
-            <div class="col-md-4 grid1">
-                <a href="#">
-                    <img src="images/img1.jpg" class="img-responsive" alt="" />
-                    <h3>@CurrentPage.title</h3>
-                    <div class="look">
-                        <ul>
-                            <li><h4>@CurrentPage.bodytext</h4></li>
-                            <li><i class="arrow"></i></li>
-                        </ul>
-                    </div>
-                </a>
+@*
+    <div class="content">
+        <div class="container">
+            <div class="row grids">
+                <div class="col-md-4 grid1">
+                    <a href="#">
+                        <img src="images/img1.jpg" class="img-responsive" alt="" />
+                        <h3></h3>
+                        <div class="look">
+                            <ul>
+                                <li><h4></h4></li>
+                                <li><i class="arrow"></i></li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 grid2">
+                    <a href="#">
+                        <img src="images/img2.jpg" class="img-responsive" alt="" />
+                        <h3>give on line</h3>
+                        <div class="look1">
+                            <ul>
+                                <li><h4>Quick & easy online giving</h4></li>
+                                <li><i class="arrow"></i></li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 grid3">
+                    <a href="#">
+                        <img src="images/img3.jpg" class="img-responsive" alt="" />
+                        <h3>prayer</h3>
+                        <div class="look2">
+                            <ul>
+                                <li><h4>Submit your prayer request</h4></li>
+                                <li><i class="arrow"></i></li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <div class="clearfix"> </div>
             </div>
-            <div class="col-md-4 grid2">
-                <a href="#">
-                    <img src="images/img2.jpg" class="img-responsive" alt="" />
-                    <h3>give on line</h3>
-                    <div class="look1">
-                        <ul>
-                            <li><h4>Quick & easy online giving</h4></li>
-                            <li><i class="arrow"></i></li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 grid3">
-                <a href="#">
-                    <img src="images/img3.jpg" class="img-responsive" alt="" />
-                    <h3>prayer</h3>
-                    <div class="look2">
-                        <ul>
-                            <li><h4>Submit your prayer request</h4></li>
-                            <li><i class="arrow"></i></li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-            <div class="clearfix"> </div>
         </div>
     </div>
-</div>
-<!-- content -->
+    <!-- content -->
+*@
 
 <!-- events -->
 <div class="row">
     <div class="events">
         <div class="container">
             <div class="col-md-6 upcoming">
-                <h3>UPCOMING EVENTS</h3>
-                <div class="family">
-                    <div class="twenty">
-                        <h4>20</h4>
-                        <p>JULY</p>
-                    </div>
-                    <div class="sunday">
-                        <h5>FAMILY SUNDAY</h5>
-                        <p>Sunday | 9:30am</p>
-                    </div>
-                    <div class="mor">
-                        <a class="more" href="#">MORE</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="family">
-                    <div class="twenty">
-                        <h4>20</h4>
-                        <p>JULY</p>
-                    </div>
-                    <div class="sunday">
-                        <h5>FAMILY SUNDAY</h5>
-                        <p>Sunday | 9:30am</p>
-                    </div>
-                    <div class="mor">
-                        <a class="more" href="#">MORE</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="family">
-                    <div class="twenty">
-                        <h4>20</h4>
-                        <p>JULY</p>
-                    </div>
-                    <div class="sunday">
-                        <h5>FAMILY SUNDAY</h5>
-                        <p>Sunday | 9:30am</p>
-                    </div>
-                    <div class="mor">
-                        <a class="more" href="#">MORE</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
+                @{
+                    var selectionNews = CurrentPage.Site().FirstChild("News").Children.Where("Visible");
+                    int counter = 1;
+                }
 
-            <div class="clearfix"> </div>
+
+                <h3>Latest News</h3>
+                @foreach (var itemNews in selectionNews)
+                {
+                    if (counter > 3) { break; }
+                    <div class="family">
+                        <div class="twenty">
+                            @{
+                                var d = umbraco.library.FormatDateTime(itemNews.CreateDate.ToString(), "dd MMMM");
+                                string txt = @umbraco.library.RemoveFirstParagraphTag(@itemNews.BodyText.ToString());
+                            }
+                            <h4>@d.Split(' ')[0].ToString()</h4>
+                            <p>@d.Split(' ')[1].ToString()</p>
+                        </div>
+                        <div class="sunday">
+                            <h5>@itemNews.title</h5>
+                            <p>@txt.Substring(0, 70).ToString().Trim() ...</p>
+                        </div>
+                        <div class="mor">
+                            <a class="more" href="@itemNews.Url">MORE</a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                                    counter++;
+                                }
+            </div>
+            <div class="col-md-6 upcoming">
+                <div><h3>Project Manager's Message</h3></div><br />
+                @Umbraco.Field("bodytext")
+                <span class="pull-right text-muted">@Umbraco.Field("creatorName")</span>
+            </div>
+            <div class="clearfix"> </div>          
         </div>
+
     </div>
 </div>
 <!-- events -->

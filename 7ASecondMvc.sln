@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{E8730084-F83C-4836-911C-E9C2EB58C066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "website", "website\website.csproj", "{784F7E62-D1C2-4227-B0B0-38D981B080E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{15562B6A-AF9A-4D48-8203-864EC751F3B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{C8810590-747E-4341-8D67-07B4F2CEE6D4}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{A6949925-4A1D-4E74-B1CA-B8189C608B07}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\website.json = PublishScripts\Templates\website.json
+		PublishScripts\Templates\website.param.dev.json = PublishScripts\Templates\website.param.dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{784F7E62-D1C2-4227-B0B0-38D981B080E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{784F7E62-D1C2-4227-B0B0-38D981B080E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{784F7E62-D1C2-4227-B0B0-38D981B080E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{784F7E62-D1C2-4227-B0B0-38D981B080E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{784F7E62-D1C2-4227-B0B0-38D981B080E7} = {E8730084-F83C-4836-911C-E9C2EB58C066}
+		{C8810590-747E-4341-8D67-07B4F2CEE6D4} = {15562B6A-AF9A-4D48-8203-864EC751F3B4}
+		{A6949925-4A1D-4E74-B1CA-B8189C608B07} = {15562B6A-AF9A-4D48-8203-864EC751F3B4}
+	EndGlobalSection
+EndGlobal

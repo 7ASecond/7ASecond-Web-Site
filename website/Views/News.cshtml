@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@{
+    var selection = CurrentPage.Site().FirstChild("News").Children.Where("Visible");
+}
+<ul>
+    @foreach (var item in selection)
+    {
+        <li>
+            <a href="@item.Url">@item.Name</a>
+            <div>
+                @{
+                    string txt = @umbraco.library.RemoveFirstParagraphTag(@item.BodyText.ToString());
+                }
+                @txt
+            </div>
+        </li>
+                        WriteLiteral(Environment.NewLine);
+                    }
+</ul>
+
