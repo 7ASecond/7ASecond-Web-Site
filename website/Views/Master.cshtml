@@ -47,27 +47,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="head-part">
                         <ul>
                             <li><a href="/management/">Management |</a></li>
-                          @*  <li><a href="#">Blog |</a></li> *@
+                            @*  <li><a href="#">Blog |</a></li> *@
                             <li><a href="/contact-us/">Contact Us</a></li>
-                         @*   <li>
-        <!-- start search-->
-        <div class="search-box">
-            <div id="sb-search" class="sb-search">
-                <form>
-                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                    <input class="sb-search-submit" type="submit" value="">
-                    <span class="sb-icon-search"> </span>
-                </form>
-            </div>
-        </div>
-        <!-- search-scripts -->
-        <script src="/scripts/classie.js"></script>
-        <script src="/scripts/uisearch.js"></script>
-        <script>
-            new UISearch(document.getElementById('sb-search'));
-        </script>
-        <!-- //search-scripts -->
-    </li>*@
+                            @*   <li>
+                                    <!-- start search-->
+                                    <div class="search-box">
+                                        <div id="sb-search" class="sb-search">
+                                            <form>
+                                                <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                                                <input class="sb-search-submit" type="submit" value="">
+                                                <span class="sb-icon-search"> </span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- search-scripts -->
+                                    <script src="/scripts/classie.js"></script>
+                                    <script src="/scripts/uisearch.js"></script>
+                                    <script>
+                                        new UISearch(document.getElementById('sb-search'));
+                                    </script>
+                                    <!-- //search-scripts -->
+                                </li>*@
                         </ul>
                     </div>
                     <div class="clearfix"> </div>
@@ -106,10 +106,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </article>
             @*<ul class="wmuSliderPagination">
-                <li><a href="#" class="">0</a></li>
-                <li><a href="#" class="">1</a></li>
-                <li><a href="#" class="">2</a></li>
-            </ul>*@
+                    <li><a href="#" class="">0</a></li>
+                    <li><a href="#" class="">1</a></li>
+                    <li><a href="#" class="">2</a></li>
+                </ul>*@
         </div>
         <!-- script -->
         <script src="/scripts/jquery.wmuSlider.js"></script>
@@ -120,6 +120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <!-- Breadcrumb -->
     <div class="content">
+        
         <div class="container">
             @Umbraco.RenderMacro("Breadcrumb")
         </div>
@@ -128,7 +129,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- header -->
     <div class="row">
         <div class="container">
-                @RenderBody()
+            @RenderBody()
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <br />
+            
         </div>
     </div>
     <!-- footer -->
@@ -136,15 +143,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="row">
             <div class="container">
                 <div class="footer-top">
-                    <div class="col-md-4 news">
+                    <div class="col-md-2 news">
                         <ul>
-						<li>
-						<a href="/sitemap/" target="_blank">Sitemap</a>
-						</li>
-						</ul>
+                            <li>
+                                <a href="/sitemap/" target="_blank">Sitemap</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-4 service">
-                        @Umbraco.RenderMacro("TwitterTimeline", new {widgetID="7ASecond", width="", height="", linkColor="", header="0", footer="0", scrollbar="0", numTweets="3"})
+                    <div class="col-md-6 service">
+                        <a class="twitter-timeline" href="https://twitter.com/7ASecond" data-widget-id="651837884090183681" data-tweet-limit="1" width="100%">Tweets by 7ASecond</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                     </div>
                     <div class="col-md-4 connect">
                         <h5>CONNECT WITH US</h5>
@@ -152,7 +160,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <li><a href="https://www.facebook.com/7ASecond"><i class="fb"></i></a></li>
                             <li><a href="https://twitter.com/7ASecond"><i class="twt"></i></a></li>
                             <li><a href="https://www.youtube.com/channel/UCywI1hHWF98GitjsMaOy0zA/playlists?view_as=public?&ab_channel=7ASecond"><i class="yout"></i></a></li>
-                           @* <li><a href="#"><i class="payp"></i></a></li>*@
+                            @* <li><a href="#"><i class="payp"></i></a></li>*@
                             <li><a href="/Contact-Us/"><i class="email"></i></a></li>
                         </ul>
                     </div>

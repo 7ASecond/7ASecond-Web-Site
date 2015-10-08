@@ -12,7 +12,7 @@
 <ul>
     @foreach (var item in selection)
     {
-		if(item.Name != "Management")
+		if(item.Name != "Management" && item.Name != "Contact Us")
 		{
 			<li class="@(item.IsAncestorOrSelf(CurrentPage) ? "current" : null)">
             <a href="@item.Url">@item.Name</a>
