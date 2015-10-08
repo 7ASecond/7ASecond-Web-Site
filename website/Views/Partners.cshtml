@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+<div class="row">
+<h1>@CurrentPage.Title</h1>
+	</div>
+	<div class="row">
+        <div>@CurrentPage.BodyText</div>
+</div>
+		
+<div id="article">
+</div><style="width: 300px;" class="alignleft"><img class="size-medium wp-image-6601" src="@Umbraco.Media(CurrentPage.mainImage).Url" class="img-responsive" alt="liGo" width="300" height="62">
+<h4>Partnership Started: @Umbraco.Field("partnershipStartDate", formatAsDate: true)</h4>
+<p>@Umbraco.Field("ourThanks")</p>
+<blockquote><p>@Umbraco.Field("theirAboutUs")</p></blockquote>
+				</div>		
+		

@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" EnableViewState="false" AutoEventWireup="true" CodeBehind="TweetButton.ascx.cs" Inherits="NWS.TwitterGoodies.UserControls.TweetButton" %>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="<%= CountLayout %>"<%= GetAdditionalParameters() %>>Tweet</a>
