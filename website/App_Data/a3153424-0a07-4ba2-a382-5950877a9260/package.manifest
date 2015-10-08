@@ -1,0 +1,16 @@
+{
+    propertyEditors: 
+	[
+        {
+			alias: "Kogler.GoogleWebFonts",
+			name: "Kogler GoogleWebFonts",
+			editor: {
+						view: "~/App_Plugins/Kogler.GoogleWebFonts/webfonts.html"
+					} 
+		}
+	]
+	,
+    javascript: [
+        '~/App_Plugins/Kogler.GoogleWebFonts/webfonts.controller.js'
+    ]
+}

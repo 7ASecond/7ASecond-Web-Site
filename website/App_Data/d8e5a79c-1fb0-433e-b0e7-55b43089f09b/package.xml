@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>Umbraco.Contact.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Umbraco.Contact.dll</orgName>
+    </file>
+    <file>
+      <guid>DataAnnotationsExtensions.ClientValidation.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>DataAnnotationsExtensions.ClientValidation.dll</orgName>
+    </file>
+    <file>
+      <guid>DataAnnotationsExtensions.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>DataAnnotationsExtensions.dll</orgName>
+    </file>
+    <file>
+      <guid>MvcUmbracoDataAnnotations.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>MvcUmbracoDataAnnotations.dll</orgName>
+    </file>
+    <file>
+      <guid>package.manifest</guid>
+      <orgPath>/App_Plugins/uContactor</orgPath>
+      <orgName>package.manifest</orgName>
+    </file>
+    <file>
+      <guid>uContactor.controller.js</guid>
+      <orgPath>/App_Plugins/uContactor</orgPath>
+      <orgName>uContactor.controller.js</orgName>
+    </file>
+    <file>
+      <guid>style.css</guid>
+      <orgPath>/App_Plugins/uContactor/assets</orgPath>
+      <orgName>style.css</orgName>
+    </file>
+    <file>
+      <guid>confirmationDialog.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>confirmationDialog.html</orgName>
+    </file>
+    <file>
+      <guid>deleted.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>deleted.html</orgName>
+    </file>
+    <file>
+      <guid>deleteDialog.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>deleteDialog.html</orgName>
+    </file>
+    <file>
+      <guid>detailDialog.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>detailDialog.html</orgName>
+    </file>
+    <file>
+      <guid>edit.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>edit.html</orgName>
+    </file>
+    <file>
+      <guid>permanentDeleteDialog.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>permanentDeleteDialog.html</orgName>
+    </file>
+    <file>
+      <guid>replied.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>replied.html</orgName>
+    </file>
+    <file>
+      <guid>restoreDialog.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>restoreDialog.html</orgName>
+    </file>
+    <file>
+      <guid>settings.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>settings.html</orgName>
+    </file>
+    <file>
+      <guid>showDialog.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>showDialog.html</orgName>
+    </file>
+    <file>
+      <guid>spam.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>spam.html</orgName>
+    </file>
+    <file>
+      <guid>spamDialog.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>spamDialog.html</orgName>
+    </file>
+    <file>
+      <guid>unreplied.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>unreplied.html</orgName>
+    </file>
+    <file>
+      <guid>unspamDialog.html</guid>
+      <orgPath>/App_Plugins/uContactor/backoffice/uContactorSection</orgPath>
+      <orgName>unspamDialog.html</orgName>
+    </file>
+    <file>
+      <guid>contactForm.cshtml</guid>
+      <orgPath>/Views/Contact</orgPath>
+      <orgName>contactForm.cshtml</orgName>
+    </file>
+    <file>
+      <guid>customContactForm.cshtml</guid>
+      <orgPath>/Views/Partials</orgPath>
+      <orgName>customContactForm.cshtml</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>uContactor</name>
+      <version>v1.0.4</version>
+      <license url="http://opensource.org/licenses/MIT">MIT License</license>
+      <url>https://github.com/dellykaos/uContactor</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Delly Mellas Nyman</name>
+      <website>http://nijmans.com</website>
+    </author>
+    <readme><![CDATA[uContactor is Contact Us manager for your Umbraco Sites.
+
+It built within customizable auto responder message and notification message for every new Contact Us message.
+
+You can manage your Contact Us message using the back office uContactor menu.
+
+How To Use It:
+Just add this snippet to your template:
+@Html.Action("RenderContactForm", "Contact")
+Constraint:
+** Send Notification To must be filled with valid email.
+
+Project Url:
+https://github.com/dellykaos/uContactor
+
+Warning:
+- This package only tested with umbraco version 7.1 and 7.2
+- Use it at your own risk
+
+uContactor 1.0.1 Build:
+- Using tabs in settings menu
+- Change save and send button class with btn-primary or btn-success to make it consistency with core UI
+- Localize button save
+- Change default content width from 85% to 100%
+- Change Auto Reply and Notification Template Node Id to Content Picker
+- Make all dialog clearer with change button styling and text
+- Close all dialog before open new dialog
+- Adding permanent delete message
+- Add filter by type in All contact message
+
+uContactor 1.0.2 Build:
+- Add highlight to current active tree
+- Remove round corners on hover contact
+
+uContactor 1.0.3 Build:
+- Adding authentication to Api for retrieveng contact message
+
+uContactor 1.0.4 Build:
+- Adding form localization]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems>
+    <DictionaryItem Key="uContactor">
+      <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[uContactor]]></Value>
+      <DictionaryItem Key="Display">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Display]]></Value>
+        <DictionaryItem Key="uContactor.Display.Email">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Email]]></Value>
+        </DictionaryItem>
+        <DictionaryItem Key="uContactor.Display.Message">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Message]]></Value>
+        </DictionaryItem>
+        <DictionaryItem Key="uContactor.Display.Name">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Name]]></Value>
+        </DictionaryItem>
+        <DictionaryItem Key="uContactor.Display.Subject">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Subject]]></Value>
+        </DictionaryItem>
+      </DictionaryItem>
+      <DictionaryItem Key="Validation">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[]]></Value>
+        <DictionaryItem Key="uContactor.Validation.Email">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Email is required.]]></Value>
+        </DictionaryItem>
+        <DictionaryItem Key="uContactor.Validation.InvalidEmail">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Invalid email address.]]></Value>
+        </DictionaryItem>
+        <DictionaryItem Key="uContactor.Validation.Message">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Message is required.]]></Value>
+        </DictionaryItem>
+        <DictionaryItem Key="uContactor.Validation.Name">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Name is required.]]></Value>
+        </DictionaryItem>
+        <DictionaryItem Key="uContactor.Validation.Subject">
+          <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Subject is required.]]></Value>
+        </DictionaryItem>
+      </DictionaryItem>
+    </DictionaryItem>
+  </DictionaryItems>
+  <Languages />
+  <DataTypes />
+</umbPackage>

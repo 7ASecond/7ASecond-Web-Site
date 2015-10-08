@@ -1,0 +1,14 @@
+<div ng-controller="Kogler.GoogleWebFontsController">
+    
+    <select class="umb-editor umb-dropdown" name="dropDownList" ng-model="model.value">
+        <option value="">-- choose a font --</option>
+        <option ng-repeat="font in fonts" class="font">{{font.family}}</option>
+    </select>
+
+    <div class="umb-editor umb-readonlyvalue" style="margin: 15px 0; font-family: '{{model.value}}'; font-size: 20px;">
+        The quick brown fox jumps over the lazy dog.
+    </div>
+    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family={{model.value}}">
+
+</div>

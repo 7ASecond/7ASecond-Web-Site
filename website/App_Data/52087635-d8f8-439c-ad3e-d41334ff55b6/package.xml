@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>uTweets.TweetsWithHashTag.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>uTweets.TweetsWithHashTag.cshtml</orgName>
+    </file>
+    <file>
+      <guid>uTweets.UserInformation.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>uTweets.UserInformation.cshtml</orgName>
+    </file>
+    <file>
+      <guid>uTweet.LatestTweet.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>uTweet.LatestTweet.cshtml</orgName>
+    </file>
+    <file>
+      <guid>uTweet.ListOfTweets.cshtml</guid>
+      <orgPath>/macroScripts</orgPath>
+      <orgName>uTweet.ListOfTweets.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Hammock.ClientProfile.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Hammock.ClientProfile.dll</orgName>
+    </file>
+    <file>
+      <guid>Hammock.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Hammock.dll</orgName>
+    </file>
+    <file>
+      <guid>Newtonsoft.Json.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Newtonsoft.Json.dll</orgName>
+    </file>
+    <file>
+      <guid>TweetSharp.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>TweetSharp.dll</orgName>
+    </file>
+    <file>
+      <guid>uTweets.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>uTweets.dll</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>uTweets</name>
+      <version>1.1</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://www.standingout.be/utweets</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Standing Out</name>
+      <website>http://www.standingout.be/</website>
+    </author>
+    <readme><![CDATA[Umbraco uTweets Package
+-------------------------------------
+
+The uTweets package allows to easily embed Twitter information on your umbraco site. The package contains some Razor macro’s which are ready to use.
+
+The uTweets package is built upon the TweetSharp library and allows for a simplified interface. The TweetSharp library is really extensive, we tried to make our library easier to use by only exposing the most used Twitter functions.
+
+Be aware that Twitter limits the requests made to the api. Therefore it is recommended that you cache your macro's.
+
+Installation
+---------------
+
+Install the package.
+
+The package will create some uTweets dictionary items where you must enter your Twitter consumerkey/secret and accessToken/secret. You can find or create these keys in your Twitter dev account (http://dev.twitter.com). All texts are also created as dictionary items, so that you can translate them to the appropriate language.
+
+The package installs some default razor scripting files and macros. You can modify the installed scripting files to your needs. Or you can use the functions and classes described below to create your own scripts.
+
+Public functions:
+-----------------------
+
+TwitterStatus GetTweet(long TweetId): Return the tweet specified by TweetId
+IEnumerable<TwitterStatus> GetTweets() : Returns a list of your tweets
+IEnumerable<TwitterStatus> GetUserTweets(string screenName): Returns a list of tweets of the specified user
+IEnumerable<TwitterStatus> GetTweetsAboutMe(): Returns a list of tweets where you are mentioned.
+IEnumerable<TwitterStatus> GetTweetsAbout(string hashtag): Returns a list of tweets with the specified  hashtag. (Include # in the string)
+TwitterUser GetUser(): Returns information about the current user
+TwitterUser GetUser(string screenName): Returns information about the specified user
+TwitterUser GetUser(int userId): Returns information about the specified userId.
+
+Public properties:
+-------------------------
+
+String ErrorDescription: Contains the error description if an error has occurred, empty otherwise.
+Int ListCount: Set the default number of tweets that is being returned in the list (default:200).
+
+Public class TwitterStatus
+------------------------------------
+
+Long Id: contains the Id of the tweet
+String Text: contains the tweet status
+String TextAsHtml:: contains the tweet status as html text
+String Author: contains the screenname of the author
+String AuthorImage: contains profile image of the author
+DateTime CreatedDate: contains the date and time of creation of the tweet
+String RelativeTime: contains text when the tweet was created (x days ago, x minutes ago,…) You can change the text in the dictionary.
+Int RetweetCount: number of times that the tweet has been retweeted
+Long RetweetId: Id of the original tweet (0 if not retweeted)
+
+Public class TwitterUser
+---------------------------------
+
+String ScreenName: screenname of the user
+DateTime CreatedDate: date and time of creation of the user
+String Description: description entered by the user
+Int FavouritesCount: number of favourites
+Int FollowersCount: number of followers
+Int FriendsCount: number of friends
+Long Id: Id of the user
+String Language: language of the user
+Int ListedCount: number of public lists the user is member of
+String Location: location as entered by the user
+String Name: Name of the user
+String ProfileImageUrl: url of the profile image of the user
+Int StatusesCount: nr of tweets
+String Url: url to the user’s twitter account
+
+Umbraco scripting files and macro’s:
+--------------------------------------------------
+
+uTweets.LatestTweet: returns the latest tweet
+uTweets.ListOfTweets: returns a html list with {nrOfTweets} tweets. The author, date and text is shown.
+uTweets.TweetsWithHashTag: returns a html list with {nrOfTweets} tweets with the hashtag {hashtag}. The author, date and text is shown.
+uTweets.UserInformation: returns information about the current Twitter user. You can even get the profile picture.
+
+Example
+-----------
+
+var t = new uTweets.Tweets(); 
+var user = t.GetUser();
+@user.Name]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros>
+    <macro>
+      <name>U Tweets. Tweets With Hash Tag</name>
+      <alias>UTweets.TweetsWithHashTag</alias>
+      <scriptType>
+      </scriptType>
+      <scriptAssembly>
+      </scriptAssembly>
+      <xslt>
+      </xslt>
+      <useInEditor>True</useInEditor>
+      <refreshRate>60</refreshRate>
+      <scriptingFile>uTweets.TweetsWithHashTag.cshtml</scriptingFile>
+      <properties>
+        <property name="hashTag" alias="hashTag" show="True" propertyType="text" />
+        <property name="nrOfTweets" alias="nrOfTweets" show="True" propertyType="number" />
+      </properties>
+    </macro>
+    <macro>
+      <name>U Tweets. User Information</name>
+      <alias>UTweets.UserInformation</alias>
+      <scriptType>
+      </scriptType>
+      <scriptAssembly>
+      </scriptAssembly>
+      <xslt>
+      </xslt>
+      <useInEditor>True</useInEditor>
+      <refreshRate>120</refreshRate>
+      <scriptingFile>uTweets.UserInformation.cshtml</scriptingFile>
+      <properties />
+    </macro>
+    <macro>
+      <name>uTweet.Latest Tweet</name>
+      <alias>uTweet.LatestTweet</alias>
+      <scriptType>
+      </scriptType>
+      <scriptAssembly>
+      </scriptAssembly>
+      <xslt>
+      </xslt>
+      <useInEditor>True</useInEditor>
+      <refreshRate>60</refreshRate>
+      <scriptingFile>uTweet.LatestTweet.cshtml</scriptingFile>
+      <properties />
+    </macro>
+    <macro>
+      <name>uTweet.List Of Tweets</name>
+      <alias>uTweet.ListOfTweets</alias>
+      <scriptType>
+      </scriptType>
+      <scriptAssembly>
+      </scriptAssembly>
+      <xslt>
+      </xslt>
+      <useInEditor>True</useInEditor>
+      <refreshRate>60</refreshRate>
+      <scriptingFile>uTweet.ListOfTweets.cshtml</scriptingFile>
+      <properties>
+        <property name="nrOfTweets" alias="nrOfTweets" show="True" propertyType="number" />
+      </properties>
+    </macro>
+  </Macros>
+  <DictionaryItems>
+    <DictionaryItem Key="uTweets">
+      <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[]]></Value>
+      <DictionaryItem Key="uTweets.About">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[about]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.AccessToken">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[(AccessToken)]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.AccessTokenSecret">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[(AccessTokenSecret)]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.ConsumerKey">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[(ConsumerKey)]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.ConsumerSecret">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[(ConsumerSecret)]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.DayAgo">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[a day ago]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.DaysAgo">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[days ago]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.HourAgo">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[an hour ago]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.HoursAgo">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[hours ago]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.MinuteAgo">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[a minute ago]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.MinutesAgo">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[minutes ago]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="uTweets.SecondsAgo">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[seconds ago]]></Value>
+      </DictionaryItem>
+    </DictionaryItem>
+  </DictionaryItems>
+  <Languages />
+  <DataTypes />
+</umbPackage>
